@@ -1,56 +1,53 @@
 import logo from "../assets/images/Logo.svg";
 
 function Footer() {
+  const navLists = [
+    {
+      heading: "Navigation",
+      links: [
+        { href: "/home", text: "Home" },
+        { href: "/about", text: "About" },
+        { href: "/menu", text: "Menu" },
+        { href: "/reservations", text: "Reservations" },
+        { href: "/order-online", text: "Order Online" },
+        { href: "/login", text: "Login" },
+      ],
+    },
+    {
+      heading: "Contact",
+      links: [
+        { href: "https://maps.google.com", text: "Address" },
+        { href: "tel:+123456789", text: "Phone number" },
+        { href: "mailto:littlelemon.chicago99@gmail.com", text: "Email" },
+      ],
+    },
+    {
+      heading: "Social-media",
+      links: [
+        { href: "#", text: "Facebook" },
+        { href: "#", text: "Instagram" },
+        { href: "#", text: "X (twitter)" },
+      ],
+    },
+  ];
+
   return (
     <nav>
       <a href="/home">
         <img src={logo} alt="restaurant logo" />
       </a>
-      <h3>Navigation</h3>
-      <ul>
-        <li>
-          <a href="/home">Home</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a href="/menu">Menu</a>
-        </li>
-        <li>
-          <a href="/reservations">Reservations</a>
-        </li>
-        <li>
-          <a href="/order-online">Order Online</a>
-        </li>
-        <li>
-          <a href="/login">Login</a>
-        </li>
-      </ul>
-      <h3>Contact</h3>
-      <ul>
-        <li>
-          <a href="https://maps.google.com">Address</a>
-        </li>
-        <li>
-          <a href="tel:+123456789">Phone number</a>
-        </li>
-        <li>
-          <a href="mailto:littlelemon.chicago99@gmail.com">Email</a>
-        </li>
-      </ul>
-      <h3>Social-meida</h3>
-      <ul>
-        <li>
-          <a href="#">Facebook</a>
-        </li>
-        <li>
-          <a href="#">Instagram</a>
-        </li>
-        <li>
-          <a href="#">{"X (twitter)"}</a>
-        </li>
-      </ul>
+      {navLists.map((list) => (
+        <>
+          <h3>{list.heading}</h3>
+          <ul key={list.heading}>
+            {list.links.map((link) => (
+              <li key={link.text}>
+                <a href={link.href}>{link.text}</a>
+              </li>
+            ))}
+          </ul>
+        </>
+      ))}
     </nav>
   );
 }
