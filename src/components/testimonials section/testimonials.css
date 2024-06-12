@@ -1,0 +1,14 @@
+@import "../../index.css";
+
+.testimonials-section {
+  margin-top: 70px;
+}
+
+.testimonials-section h2 {
+  text-align: center;
+  color: var(--secondary-one-color);
+}
+
+.testimonials-section .three-column-grid {
+  gap: 4rem;
+}

@@ -13,6 +13,10 @@
   height: 250px;
 }
 
+.dish-card span {
+  color: var(--secondary-one-color);
+}
+
 .dish-card .dish-card-body {
   padding: 2rem;
 }
