@@ -1,0 +1,28 @@
+@import "../../../index.css";
+
+.dish-card {
+  height: 520px;
+  border-radius: 16px;
+  background-color: var(--secondary-three-color);
+  box-shadow: 0 -10px 5px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.dish-card img {
+  width: 100%;
+  height: 250px;
+}
+
+.dish-card .dish-card-body {
+  padding: 2rem;
+}
+
+.dish-card h3 {
+  margin: 0;
+}
+
+.dish-card .icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 20px;
+}

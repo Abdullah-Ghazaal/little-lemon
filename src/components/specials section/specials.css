@@ -1,0 +1,18 @@
+@import "../../index.css";
+
+.specials-section {
+  margin-top: 7rem;
+}
+
+.specials-section h2 {
+  color: var(--secondary-four-color);
+  margin: 0;
+}
+
+.specials-section .H-flex {
+  align-items: center;
+}
+
+.specials-cards {
+  margin-top: 30px;
+}
