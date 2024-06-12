@@ -11,11 +11,11 @@ function Header() {
   ];
 
   return (
-    <nav>
-      <a href="/home">
+    <nav className="header-grid">
+      <a href="/home" className="logo">
         <img src={logo} alt="restaurant logo" />
       </a>
-      <ul>
+      <ul className="H-flex flex-space-between">
         {navLinks.map((link) => (
           <li key={link.text}>
             <a href={link.href}>{link.text}</a>

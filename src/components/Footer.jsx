@@ -32,22 +32,24 @@ function Footer() {
   ];
 
   return (
-    <nav>
-      <a href="/home">
+    <nav className="footer-grid">
+      <a href="/home" className="logo">
         <img src={logo} alt="restaurant logo" />
       </a>
-      {navLists.map((list) => (
-        <>
-          <h3>{list.heading}</h3>
-          <ul key={list.heading}>
-            {list.links.map((link) => (
-              <li key={link.text}>
-                <a href={link.href}>{link.text}</a>
-              </li>
-            ))}
-          </ul>
-        </>
-      ))}
+      <div className="H-flex flex-space-around">
+        {navLists.map((list) => (
+          <div key={list.heading}>
+            <h3>{list.heading}</h3>
+            <ul>
+              {list.links.map((link) => (
+                <li key={link.text}>
+                  <a href={link.href}>{link.text}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </nav>
   );
 }

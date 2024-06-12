@@ -4,13 +4,13 @@ import Homepage from "./pages/Home/Homepage";
 
 function App() {
   return (
-    <>
+    <div className="auto-grid">
       <Header />
       <main>
         <Homepage />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
