@@ -1,0 +1,40 @@
+@import "../../index.css";
+
+.about-section {
+  background-color: var(--secondary-four-color);
+  margin-top: 70px;
+  padding: 50px 0;
+}
+
+.about-section h2 {
+  color: var(--primary-two-color);
+  margin-bottom: 0;
+}
+
+.about-section h3 {
+  color: var(--secondary-three-color);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.about-section p {
+  color: var(--secondary-three-color);
+  max-width: 32ch;
+}
+
+.about-section img {
+  width: 300px;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 3px 1px white;
+}
+
+.about-section .owners-first-img,
+.about-section .owners-second-img {
+  grid-area: 1 / 2;
+}
+
+.about-section .owners-second-img {
+  transform: translateX(205px) translateY(-35px);
+}
