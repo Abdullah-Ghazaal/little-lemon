@@ -43,6 +43,12 @@ body {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .mobile-grid {
+    display: grid;
+  }
+}
+
 .H-flex {
   display: flex;
 }

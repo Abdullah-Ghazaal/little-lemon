@@ -33,7 +33,7 @@ function SpecialsSection() {
         <h2>This Weeks Specials</h2>
         <Button btnColor={"primary-two-color"}>online menu</Button>
       </div>
-      <div className="specials-cards three-column-grid">
+      <div className="specials-cards three-column-grid mobile-grid">
         {specials.map((dish) => (
           <DishCard
             key={dish.title}

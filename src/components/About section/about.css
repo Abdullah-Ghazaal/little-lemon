@@ -30,11 +30,33 @@
   box-shadow: 0 0 3px 1px white;
 }
 
-.about-section .owners-first-img,
-.about-section .owners-second-img {
-  grid-area: 1 / 2;
+@media screen and (min-width: 768px) {
+  .about-section .owners-first-img,
+  .about-section .owners-second-img {
+    grid-area: 1 / 2;
+  }
+
+  .about-section .owners-second-img {
+    transform: translateX(205px) translateY(-35px);
+  }
 }
 
-.about-section .owners-second-img {
-  transform: translateX(205px) translateY(-35px);
+@media screen and (max-width: 767px) {
+  .about-section .owners-first-img,
+  .about-section .owners-second-img {
+    grid-area: 2 / 1;
+    justify-self: center;
+  }
+
+  .about-section .owners-second-img {
+    transform: translateX(100px) translateY(-10px);
+  }
+
+  .about-section .owners-first-img {
+    transform: translateX(-90px);
+  }
+
+  .about-section .mobile-grid {
+    row-gap: 30px;
+  }
 }

@@ -17,7 +17,7 @@ function HeaderSection() {
         <a href="/home" className="logo">
           <img src={logo} alt="restaurant logo" />
         </a>
-        <ul className="H-flex">
+        <ul className="links H-flex">
           {navLinks.map((link) => (
             <li key={link.text}>
               <a href={link.href}>{link.text}</a>

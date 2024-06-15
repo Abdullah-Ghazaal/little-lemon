@@ -12,3 +12,9 @@
 .header-section .logo {
   transform: translateY(5px);
 }
+
+@media screen and (max-width: 767px) {
+  .header-section .links {
+    display: none;
+  }
+}

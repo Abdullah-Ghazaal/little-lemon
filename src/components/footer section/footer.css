@@ -17,3 +17,9 @@
   color: var(--primary-one-color);
   margin-bottom: 2rem;
 }
+
+@media screen and (max-width: 767px) {
+  .footer-section .footer-links-container {
+    display: none;
+  }
+}

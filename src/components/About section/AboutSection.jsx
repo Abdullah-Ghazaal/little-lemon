@@ -5,7 +5,7 @@ import owners2 from "../../assets/images/ownners2.jpg";
 function AboutSection() {
   return (
     <section className="about-section">
-      <div className="about-container two-column-grid section-max-width">
+      <div className="about-container two-column-grid mobile-grid section-max-width">
         <div className="info-container V-flex">
           <h2>About Little Lemon</h2>
           <h3>Chicago</h3>

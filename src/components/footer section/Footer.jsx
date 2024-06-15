@@ -38,7 +38,7 @@ function FooterSection() {
         <a href="/home" className="logo">
           <img src={logo} alt="restaurant logo" />
         </a>
-        <div className="H-flex">
+        <div className="footer-links-container H-flex">
           {navLists.map((list) => (
             <div key={list.heading} className="footer-links">
               <h3>{list.heading}</h3>

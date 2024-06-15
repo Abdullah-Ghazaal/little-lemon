@@ -5,11 +5,11 @@ import heroImg from "../../assets/images/hero-img.jpg";
 function HeroSection() {
   return (
     <section className="hero-section green-bg">
-      <div className="two-column-grid section-max-width">
+      <div className="two-column-grid mobile-grid section-max-width">
         <div className="info">
           <h1>Little Lemon</h1>
           <h3>Chicago</h3>
-          <p>
+          <p className="hero-text">
             we are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist
           </p>

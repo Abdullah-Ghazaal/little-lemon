@@ -18,7 +18,6 @@
 .hero-section p {
   margin-top: 1rem;
   color: var(--secondary-three-color);
-  max-width: 35ch;
 }
 
 .hero-section img {
@@ -31,4 +30,16 @@
 
 .hero-section .info {
   align-self: center;
+}
+
+@media screen and (max-width: 767px) {
+  .hero-section .info {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section .hero-text {
+    max-width: 35ch;
+  }
 }

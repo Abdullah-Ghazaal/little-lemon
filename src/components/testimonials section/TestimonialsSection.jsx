@@ -32,7 +32,7 @@ function TestimonialsSection() {
   return (
     <section className="testimonials-section section-max-width">
       <h2>Testimonials</h2>
-      <div className="testimonials-cards three-column-grid">
+      <div className="testimonials-cards three-column-grid mobile-grid">
         {testimonials.map((t) => (
           <TestimonialCard
             key={t.name}
