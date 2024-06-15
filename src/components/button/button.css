@@ -11,8 +11,14 @@
   letter-spacing: 1px;
   white-space: nowrap;
   text-align: center;
+  cursor: pointer;
 }
 
 .btn-primary-two-color {
   background-color: var(--primary-two-color);
+}
+
+.btn-primary-two-color.btn-hoverd:hover {
+  background-color: #ddbc17;
+  color: white;
 }

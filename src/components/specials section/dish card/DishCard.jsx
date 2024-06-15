@@ -7,7 +7,7 @@ function DishCard({ cardTitle, cardText, price, cardImg }) {
       <header>
         <img src={cardImg} className="card-img" />
       </header>
-      <div className="dish-card-body">
+      <div className="dish-card-body V-flex">
         <div className="H-flex flex-space-between">
           <h3>{cardTitle}</h3>
           <span>{price}</span>

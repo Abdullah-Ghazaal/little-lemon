@@ -25,8 +25,9 @@ body {
 }
 
 .section-max-width {
-  max-width: 1140px;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 @media screen and (min-width: 768px) {
@@ -144,6 +145,11 @@ a {
 a {
   text-decoration: none;
   color: var(--secondary-four-color);
+}
+
+a:hover,
+a:focus {
+  color: var(--primary-two-color);
 }
 
 ul {

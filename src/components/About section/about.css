@@ -23,7 +23,7 @@
 }
 
 .about-section img {
-  width: 300px;
+  width: 50%;
   height: 370px;
   object-fit: cover;
   border-radius: 16px;
