@@ -1,6 +1,6 @@
 import HeaderSection from "./components/header section/HeaderSection";
-import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";
+import FooterSection from "./components/footer section/Footer";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <main>
         <Homepage />
       </main>
-      <Footer />
+      <FooterSection />
     </div>
   );
 }

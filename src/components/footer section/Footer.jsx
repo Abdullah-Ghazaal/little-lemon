@@ -1,6 +1,7 @@
-import logo from "../assets/images/Logo.svg";
+import logo from "../../assets/images/Logo.svg";
+import "./footer.css";
 
-function Footer() {
+function FooterSection() {
   const navLists = [
     {
       heading: "Navigation",
@@ -32,26 +33,28 @@ function Footer() {
   ];
 
   return (
-    <nav className="footer-grid">
-      <a href="/home" className="logo">
-        <img src={logo} alt="restaurant logo" />
-      </a>
-      <div className="H-flex flex-space-around">
-        {navLists.map((list) => (
-          <div key={list.heading}>
-            <h3>{list.heading}</h3>
-            <ul>
-              {list.links.map((link) => (
-                <li key={link.text}>
-                  <a href={link.href}>{link.text}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </nav>
+    <footer className="footer-section">
+      <nav className="H-flex section-max-width ">
+        <a href="/home" className="logo">
+          <img src={logo} alt="restaurant logo" />
+        </a>
+        <div className="H-flex">
+          {navLists.map((list) => (
+            <div key={list.heading} className="footer-links">
+              <h3>{list.heading}</h3>
+              <ul>
+                {list.links.map((link) => (
+                  <li key={link.text}>
+                    <a href={link.href}>{link.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </nav>
+    </footer>
   );
 }
 
-export default Footer;
+export default FooterSection;

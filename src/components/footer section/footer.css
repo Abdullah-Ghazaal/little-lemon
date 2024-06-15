@@ -1,0 +1,19 @@
+@import "../../index.css";
+
+.footer-section nav {
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+.footer-section .footer-links {
+  margin-left: 100px;
+}
+
+.footer-section .logo {
+  align-self: center;
+}
+
+.footer-section h3 {
+  color: var(--primary-one-color);
+  margin-bottom: 2rem;
+}

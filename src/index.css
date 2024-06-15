@@ -41,13 +41,6 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
-
-  .header-grid,
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 150px 2fr;
-    padding: 0.5rem 2rem;
-  }
 }
 
 .H-flex {
