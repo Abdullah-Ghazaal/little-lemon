@@ -45,7 +45,7 @@ body {
   .header-grid,
   .footer-grid {
     display: grid;
-    grid-template-columns: 0.5fr 2fr;
+    grid-template-columns: 150px 2fr;
     padding: 0.5rem 2rem;
   }
 }
@@ -65,10 +65,6 @@ body {
 
 .flex-space-around {
   justify-content: space-around;
-}
-
-.logo {
-  align-self: center;
 }
 
 /* Typography Rules */

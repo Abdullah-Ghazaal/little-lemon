@@ -1,0 +1,14 @@
+@import "../../index.css";
+
+.header-section li {
+  margin-left: 50px;
+}
+
+.header-section nav {
+  padding: 5px 8px;
+  align-items: center;
+}
+
+.header-section .logo {
+  transform: translateY(5px);
+}
