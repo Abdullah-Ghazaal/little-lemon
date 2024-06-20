@@ -1,11 +1,11 @@
 @import "../../index.css";
 
-.header-section li {
+.header-section .links li {
   margin-left: 50px;
 }
 
 .header-section nav {
-  padding: 5px 8px;
+  padding: 10px 10px;
   align-items: center;
 }
 
@@ -13,8 +13,25 @@
   transform: translateY(5px);
 }
 
+.header-section .links-mobile li {
+  margin-left: 5px;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.header-section .menu-button {
+  align-self: center;
+}
+
 @media screen and (max-width: 767px) {
   .header-section .links {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-section .menu-button,
+  .header-section .links-mobile {
     display: none;
   }
 }
