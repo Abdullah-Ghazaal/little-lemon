@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.5fr 1fr;
+  transition: transform 0.3s;
 }
 
 .dish-card img {
@@ -34,4 +35,8 @@
   width: 16px;
   height: 16px;
   margin-left: 20px;
+}
+
+.dish-card:hover {
+  transform: scale(1.035);
 }
