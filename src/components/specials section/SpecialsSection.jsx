@@ -2,7 +2,7 @@ import "./specials.css";
 import Button from "../button/Button";
 import DishCard from "./dish card/DishCard";
 import greekSalad from "../../assets/images/greek salad.jpg";
-import bruchetta from "../../assets/images/bruchetta.svg";
+import bruchetta from "../../assets/images/bruchetta.jpg";
 import lemonDessert from "../../assets/images/lemon dessert.jpg";
 
 function SpecialsSection() {
