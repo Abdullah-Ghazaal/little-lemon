@@ -30,7 +30,7 @@ function SpecialsSection() {
   return (
     <section className="specials-section section-max-width">
       <div className="H-flex flex-space-between">
-        <h2>This Weeks Specials</h2>
+        <h2>This Week's Specials</h2>
         <Button btnColor={"primary-two-color"}>online menu</Button>
       </div>
       <div className="specials-cards three-column-grid mobile-grid">

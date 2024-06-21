@@ -1,4 +1,5 @@
-import logo from "../../assets/images/Logo.svg";
+import FooterLinksDesktop from "./FooterLinksDesktop";
+import FooterLinksMobile from "./FooterLinksMobile";
 import "./footer.css";
 
 function FooterSection() {
@@ -34,25 +35,8 @@ function FooterSection() {
 
   return (
     <footer className="footer-section">
-      <nav className="H-flex section-max-width ">
-        <a href="/home" className="logo">
-          <img src={logo} alt="restaurant logo" />
-        </a>
-        <div className="footer-links-container H-flex">
-          {navLists.map((list) => (
-            <div key={list.heading} className="footer-links">
-              <h3>{list.heading}</h3>
-              <ul>
-                {list.links.map((link) => (
-                  <li key={link.text}>
-                    <a href={link.href}>{link.text}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </nav>
+      <FooterLinksDesktop navLists={navLists} />
+      <FooterLinksMobile navLists={navLists} />
     </footer>
   );
 }

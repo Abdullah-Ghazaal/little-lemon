@@ -1,0 +1,35 @@
+.drop-down-menu header {
+  background-color: var(--primary-one-color);
+  padding: 0 30px;
+}
+
+.drop-down-menu h3 {
+  color: var(--primary-two-color);
+  margin: 2rem 0;
+}
+
+.drop-down-menu .chevron-down {
+  color: var(--secondary-three-color);
+  align-self: center;
+}
+
+.drop-down-menu .menu-content {
+  text-align: center;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s, opacity 0.3s;
+  border-top: 3px solid var(--primary-two-color);
+  border-bottom: 3px solid var(--primary-two-color);
+}
+
+.drop-down-menu .menu-opened {
+  max-height: 100%;
+  opacity: 1;
+}
+
+.drop-down-menu .menu-content li {
+  margin: 12px 0;
+  background-color: var(--secondary-three-color);
+  padding: 3px 0;
+}
