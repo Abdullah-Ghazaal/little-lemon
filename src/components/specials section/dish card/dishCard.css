@@ -1,5 +1,3 @@
-@import "../../../index.css";
-
 .dish-card {
   border-radius: 16px;
   background-color: var(--secondary-three-color);
