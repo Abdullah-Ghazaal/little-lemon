@@ -5,7 +5,7 @@
 }
 
 .header-section nav {
-  padding: 10px 10px;
+  padding: 10px 10px 0 10px;
   align-items: center;
 }
 
@@ -23,15 +23,26 @@
   align-self: center;
 }
 
+.header-section .links-mobile {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s, opacity 0.3s;
+}
+
+.header-section .links-mobile.opened {
+  max-height: 100%;
+  opacity: 1;
+}
+
 @media screen and (max-width: 767px) {
-  .header-section .links {
+  .header-section .nav-bar-desktop {
     display: none;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .header-section .menu-button,
-  .header-section .links-mobile {
+  .header-section .nav-bar-mobile {
     display: none;
   }
 }
