@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../logo/Logo";
 
 function NavBarDesktop({ navLinks }) {
@@ -8,7 +9,7 @@ function NavBarDesktop({ navLinks }) {
         <ul className="links H-flex">
           {navLinks.map((link) => (
             <li key={link.text}>
-              <a href={link.href}>{link.text}</a>
+              <Link to={link.href}>{link.text}</Link>
             </li>
           ))}
         </ul>

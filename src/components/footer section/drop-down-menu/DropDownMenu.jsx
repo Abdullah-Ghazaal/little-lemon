@@ -1,6 +1,7 @@
 import { FaChevronDown } from "react-icons/fa6";
 import "./dropDown.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function DropDownMenu({ heading, links }) {
   const [isMenuOpened, setMenuOpened] = useState(false);
@@ -17,9 +18,9 @@ function DropDownMenu({ heading, links }) {
       <div className={`menu-content ${isMenuOpened ? "menu-opened" : ""}`}>
         <ul>
           {links.map((link) => (
-            <a href={link.href} key={link.text}>
+            <Link to={link.href} key={link.text}>
               <li>{link.text}</li>
-            </a>
+            </Link>
           ))}
         </ul>
       </div>

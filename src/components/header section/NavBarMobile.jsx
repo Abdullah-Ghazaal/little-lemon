@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Logo from "../logo/Logo";
+import { Link } from "react-router-dom";
 
 function NavBarMobile({ navLinks }) {
   const [isMenuOpened, setMenuClicked] = useState(false);
@@ -19,7 +20,7 @@ function NavBarMobile({ navLinks }) {
       <ul className={`links-mobile V-flex ${isMenuOpened ? "opened" : ""}`}>
         {navLinks.map((link) => (
           <li key={link.text}>
-            <a href={link.href}>{link.text}</a>
+            <Link to={link.href}>{link.text}</Link>
           </li>
         ))}
       </ul>

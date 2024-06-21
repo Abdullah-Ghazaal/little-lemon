@@ -1,13 +1,13 @@
 import HeaderSection from "./components/header section/HeaderSection";
-import Homepage from "./pages/Homepage";
-import FooterSection from "./components/footer section/Footer";
+import FooterSection from "./components/footer section/FooterSection";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div className="auto-grid">
       <HeaderSection />
       <main>
-        <Homepage />
+        <Outlet />
       </main>
       <FooterSection />
     </div>

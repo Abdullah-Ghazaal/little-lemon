@@ -4,7 +4,7 @@ import NavBarMobile from "./NavBarMobile";
 
 function HeaderSection() {
   const navLinks = [
-    { href: "/home", text: "Home" },
+    { href: "/", text: "Home" },
     { href: "/about", text: "About" },
     { href: "/menu", text: "Menu" },
     { href: "/reservations", text: "Reservations" },

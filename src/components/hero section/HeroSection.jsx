@@ -1,6 +1,7 @@
 import "./hero.css";
 import Button from "../button/Button";
 import heroImg from "../../assets/images/hero-img.jpg";
+import { Link } from "react-router-dom";
 
 function HeroSection() {
   return (
@@ -13,7 +14,9 @@ function HeroSection() {
             we are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist
           </p>
-          <Button btnColor={"primary-two-color"}>reserve a Table</Button>
+          <Link to="/reservations">
+            <Button btnColor={"primary-two-color"}>reserve a Table</Button>
+          </Link>
         </div>
         <img src={heroImg} alt="an image of a random dish" />
       </div>

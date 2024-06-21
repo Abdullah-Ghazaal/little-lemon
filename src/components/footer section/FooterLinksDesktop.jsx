@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../logo/Logo";
 
 function FooterLinksDesktop({ navLists }) {
@@ -11,7 +12,7 @@ function FooterLinksDesktop({ navLists }) {
             <ul>
               {list.links.map((link) => (
                 <li key={link.text}>
-                  <a href={link.href}>{link.text}</a>
+                  <Link to={link.href}>{link.text}</Link>
                 </li>
               ))}
             </ul>
