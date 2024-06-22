@@ -1,0 +1,25 @@
+.error-section {
+  background-color: var(--secondary-four-color);
+  text-align: center;
+}
+
+.error-section .info-container {
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.error-section h3 {
+  margin: 0;
+  color: white;
+  line-height: 1.5;
+}
+
+.error-section h4 {
+  color: var(--primary-two-color);
+}
+
+.error-section a {
+  color: var(--secondary-one-color);
+  text-decoration: underline;
+}
