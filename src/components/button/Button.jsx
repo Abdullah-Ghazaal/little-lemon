@@ -1,8 +1,10 @@
 import "./button.css";
 
-function Button({ children, btnColor }) {
+function Button({ children, btnColor, btnType = "" }) {
   return (
-    <button className={`btn btn-${btnColor} btn-hoverd`}>{children}</button>
+    <button type={btnType} className={`btn btn-${btnColor} btn-hoverd`}>
+      {children}
+    </button>
   );
 }
 
