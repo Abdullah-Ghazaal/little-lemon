@@ -1,83 +1,126 @@
-import { useState } from "react";
 import Button from "../../button/Button";
 import "./form.css";
 import { submitAPI } from "../../../mock API/API-mock";
+import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
 
 function ReservationForm({ availableTimes, updateAvailableTimes }) {
-  const [formData, setFormData] = useState({
+  const navigate = useNavigate();
+
+  const initialValues = {
     date: "",
     time: "",
     numberOfGuests: "",
     occasion: "",
     comment: "",
+  };
+
+  const validate = (values) => {
+    const errors = {};
+
+    if (!values.date) {
+      errors.date = "Date is required";
+    }
+
+    if (!values.time) {
+      errors.time = "Time is required";
+    }
+
+    if (!values.numberOfGuests) {
+      errors.numberOfGuests = "Number of guests is required";
+    } else if (parseInt(values.numberOfGuests, 10) < 1) {
+      errors.numberOfGuests = "Number of guests must be at least 1";
+    }
+
+    if (!values.occasion) {
+      errors.occasion = "Please select an occasion";
+    }
+
+    return errors;
+  };
+
+  const { values, handleSubmit, handleChange, touched, errors } = useFormik({
+    initialValues,
+    validate,
+    onSubmit: (values) => {
+      const sumbitted = submitAPI(values);
+
+      if (sumbitted) {
+        navigate("/reservation-confirmed");
+      }
+    },
   });
 
   return (
-    <form
-      className="reservation-form V-flex"
-      onSubmit={(e) => {
-        e.preventDefault();
-
-        const sumbitted = submitAPI(formData);
-
-        if (sumbitted) {
-          setFormData({
-            date: "",
-            time: "",
-            numberOfGuests: "",
-            occasion: "",
-            comment: "",
-          });
-        }
-      }}
-    >
-      <label htmlFor="res-date">Choose Date:</label>
+    <form className="reservation-form V-flex" onSubmit={handleSubmit}>
+      <label htmlFor="res-date">
+        Choose Date: <span className="star">*</span>
+      </label>
+      {touched.date && errors.date && <p className="error">{errors.date}</p>}
       <input
         type="date"
+        name="date"
         id="res-date"
-        value={formData.date}
+        value={values.date}
         onChange={(e) => {
-          setFormData({ ...formData, date: e.target.value });
+          handleChange(e);
           updateAvailableTimes(e.target.value);
         }}
       />
-      <label htmlFor="res-time">Choose Time:</label>
+      <label htmlFor="res-time">
+        Choose Time: <span className="star">*</span>
+      </label>
+      {touched.time && errors.time && <p className="error">{errors.time}</p>}
       <select
         id="res-time"
-        value={formData.time}
-        onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+        name="time"
+        value={values.time}
+        onChange={handleChange}
       >
+        <option value=""></option>
         {availableTimes.map((t) => (
           <option key={t} value={t}>
             {t}
           </option>
         ))}
       </select>
-      <label htmlFor="number of guests">Number Of Guests:</label>
+      <label htmlFor="number of guests">
+        Number Of Guests: <span className="star">*</span>
+      </label>
+      {touched.numberOfGuests && errors.numberOfGuests && (
+        <p className="error">{errors.numberOfGuests}</p>
+      )}
       <input
         type="number"
         id="number of guests"
         min="1"
-        value={formData.numberOfGuests}
-        onChange={(e) =>
-          setFormData({ ...formData, numberOfGuests: e.target.value })
-        }
+        name="numberOfGuests"
+        value={values.numberOfGuests}
+        onChange={handleChange}
       />
-      <label htmlFor="occasion">Select Ocaasion:</label>
+      <label htmlFor="occasion">
+        Select Ocaasion: <span className="star">*</span>
+      </label>
+      {touched.occasion && errors.occasion && (
+        <p className="error">{errors.occasion}</p>
+      )}
       <select
         id="occasion"
-        value={formData.occasion}
-        onChange={(e) => setFormData({ ...formData, occasion: e.target.value })}
+        name="occasion"
+        value={values.occasion}
+        onChange={handleChange}
       >
-        <option value="" disabled></option>
+        <option value=""></option>
         <option value="Birthday">Birthday</option>
         <option value="Anniversary">Anniversary</option>
+        <option value="other">Other</option>
       </select>
       <label htmlFor="comment">Comment:</label>
       <textarea
         id="comment"
-        value={formData.comment}
-        onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
+        name="comment"
+        value={values.comment}
+        onChange={handleChange}
       ></textarea>
       <Button btnColor={"primary-two-color"} btnType="submit">
         Reserve Now

@@ -22,3 +22,14 @@ select {
 .reservation-form option {
   margin-bottom: 5px;
 }
+
+.reservation-form .error {
+  color: red;
+  margin: 1px 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.reservation-form .star {
+  color: red;
+}
