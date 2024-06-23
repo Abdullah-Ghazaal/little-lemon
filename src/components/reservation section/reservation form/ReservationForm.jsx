@@ -2,14 +2,7 @@ import { useState } from "react";
 import Button from "../../button/Button";
 import "./form.css";
 
-function ReservationForm() {
-  const [availableTimes, setAvailableTimes] = useState([
-    { time: "17:00", label: "5:00PM" },
-    { time: "16:00", label: "4:00PM" },
-    { time: "14:00", label: "2:00PM" },
-    { time: "13:00", label: "1:00PM" },
-  ]);
-
+function ReservationForm({ availableTimes, updateAvailableTimes }) {
   const [formData, setFormData] = useState({
     date: "",
     time: "",
@@ -38,7 +31,10 @@ function ReservationForm() {
         type="date"
         id="res-date"
         value={formData.date}
-        onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+        onChange={(e) => {
+          setFormData({ ...formData, date: e.target.value });
+          updateAvailableTimes(e.target.value);
+        }}
       />
       <label htmlFor="res-time">Choose Time:</label>
       <select
@@ -47,8 +43,8 @@ function ReservationForm() {
         onChange={(e) => setFormData({ ...formData, time: e.target.value })}
       >
         {availableTimes.map((t) => (
-          <option key={t.time} value={t.time}>
-            {t.label}
+          <option key={t} value={t}>
+            {t}
           </option>
         ))}
       </select>
@@ -79,7 +75,7 @@ function ReservationForm() {
         onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
       ></textarea>
       <Button btnColor={"primary-two-color"} btnType="submit">
-        Next
+        Reserve Now
       </Button>
     </form>
   );
