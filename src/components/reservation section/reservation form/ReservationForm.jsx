@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../../button/Button";
 import "./form.css";
+import { submitAPI } from "../../../mock API/API-mock";
 
 function ReservationForm({ availableTimes, updateAvailableTimes }) {
   const [formData, setFormData] = useState({
@@ -16,14 +17,18 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
       className="reservation-form V-flex"
       onSubmit={(e) => {
         e.preventDefault();
-        console.log(formData);
-        setFormData({
-          date: "",
-          time: "",
-          numberOfGuests: "",
-          occasion: "",
-          comment: "",
-        });
+
+        const sumbitted = submitAPI(formData);
+
+        if (sumbitted) {
+          setFormData({
+            date: "",
+            time: "",
+            numberOfGuests: "",
+            occasion: "",
+            comment: "",
+          });
+        }
       }}
     >
       <label htmlFor="res-date">Choose Date:</label>

@@ -37,7 +37,6 @@ function FooterSection() {
     <footer className="footer-section">
       <FooterLinksDesktop navLists={navLists} />
       <FooterLinksMobile navLists={navLists} />
-      <h5>Developed by Abdullah Ghazaal</h5>
     </footer>
   );
 }
