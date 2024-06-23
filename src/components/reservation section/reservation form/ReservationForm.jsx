@@ -39,17 +39,20 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
     return errors;
   };
 
-  const { values, handleSubmit, handleChange, touched, errors } = useFormik({
-    initialValues,
-    validate,
-    onSubmit: (values) => {
-      const sumbitted = submitAPI(values);
+  const { values, handleSubmit, handleChange, touched, errors, isSubmitting } =
+    useFormik({
+      initialValues,
+      validate,
+      onSubmit: async (values) => {
+        await new Promise((resolve) => setTimeout(resolve, 2000));
 
-      if (sumbitted) {
-        navigate("/reservation-confirmed");
-      }
-    },
-  });
+        const sumbitted = submitAPI(values);
+
+        if (sumbitted) {
+          navigate("/reservation-confirmed");
+        }
+      },
+    });
 
   return (
     <form className="reservation-form V-flex" onSubmit={handleSubmit}>
@@ -122,8 +125,12 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
         value={values.comment}
         onChange={handleChange}
       ></textarea>
-      <Button btnColor={"primary-two-color"} btnType="submit">
-        Reserve Now
+      <Button
+        btnColor={"primary-two-color"}
+        btnType="submit"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Reserving ..." : "Reserve Now"}
       </Button>
     </form>
   );
