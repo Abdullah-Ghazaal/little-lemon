@@ -44,7 +44,7 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
       initialValues,
       validate,
       onSubmit: async (values) => {
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 1500));
 
         const sumbitted = submitAPI(values);
 
@@ -56,10 +56,12 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
 
   return (
     <form className="reservation-form V-flex" onSubmit={handleSubmit}>
-      <label htmlFor="res-date">
-        Choose Date: <span className="star">*</span>
-      </label>
-      {touched.date && errors.date && <p className="error">{errors.date}</p>}
+      <div className="H-flex flex-space-between">
+        <label htmlFor="res-date">
+          Choose Date: <span className="star">*</span>
+        </label>
+        {touched.date && errors.date && <p className="error">{errors.date}</p>}
+      </div>
       <input
         type="date"
         name="date"
@@ -70,10 +72,12 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
           updateAvailableTimes(e.target.value);
         }}
       />
-      <label htmlFor="res-time">
-        Choose Time: <span className="star">*</span>
-      </label>
-      {touched.time && errors.time && <p className="error">{errors.time}</p>}
+      <div className="H-flex flex-space-between">
+        <label htmlFor="res-time">
+          Choose Time: <span className="star">*</span>
+        </label>
+        {touched.time && errors.time && <p className="error">{errors.time}</p>}
+      </div>
       <select
         id="res-time"
         name="time"
@@ -87,12 +91,14 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
           </option>
         ))}
       </select>
-      <label htmlFor="number of guests">
-        Number Of Guests: <span className="star">*</span>
-      </label>
-      {touched.numberOfGuests && errors.numberOfGuests && (
-        <p className="error">{errors.numberOfGuests}</p>
-      )}
+      <div className="H-flex flex-space-between">
+        <label htmlFor="number of guests">
+          Number Of Guests: <span className="star">*</span>
+        </label>
+        {touched.numberOfGuests && errors.numberOfGuests && (
+          <p className="error">{errors.numberOfGuests}</p>
+        )}
+      </div>
       <input
         type="number"
         id="number of guests"
@@ -101,12 +107,14 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
         value={values.numberOfGuests}
         onChange={handleChange}
       />
-      <label htmlFor="occasion">
-        Select Ocaasion: <span className="star">*</span>
-      </label>
-      {touched.occasion && errors.occasion && (
-        <p className="error">{errors.occasion}</p>
-      )}
+      <div className="H-flex flex-space-between">
+        <label htmlFor="occasion">
+          Select Ocaasion: <span className="star">*</span>
+        </label>
+        {touched.occasion && errors.occasion && (
+          <p className="error">{errors.occasion}</p>
+        )}
+      </div>
       <select
         id="occasion"
         name="occasion"
