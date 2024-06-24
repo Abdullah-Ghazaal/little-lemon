@@ -4,8 +4,11 @@ import "./reserve.css";
 import { useReducer } from "react";
 import dateReducer from "../../reducers/dateReducer";
 import useGetAvailableTimes from "../../hooks/useGetAvailableTimes";
+import { useNavigate } from "react-router-dom";
 
 function ReservationSection() {
+  const navigate = useNavigate();
+
   const initialTimes = new Date();
 
   const [selectedDate, dispatch] = useReducer(dateReducer, initialTimes);
@@ -27,6 +30,7 @@ function ReservationSection() {
         <ReservationForm
           availableTimes={availableTimes}
           updateAvailableTimes={updateTimes}
+          navigate={navigate}
         />
       </div>
     </section>

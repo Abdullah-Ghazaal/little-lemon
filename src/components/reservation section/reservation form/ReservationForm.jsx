@@ -1,12 +1,9 @@
 import Button from "../../button/Button";
 import "./form.css";
 import { submitAPI } from "../../../mock API/API-mock";
-import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 
-function ReservationForm({ availableTimes, updateAvailableTimes }) {
-  const navigate = useNavigate();
-
+function ReservationForm({ availableTimes, updateAvailableTimes, navigate }) {
   const initialValues = {
     date: "",
     time: "",
@@ -44,7 +41,7 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
       initialValues,
       validate,
       onSubmit: async (values) => {
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
 
         const sumbitted = submitAPI(values);
 
@@ -66,6 +63,7 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
         type="date"
         name="date"
         id="res-date"
+        data-testid="date"
         value={values.date}
         onChange={(e) => {
           handleChange(e);
@@ -81,6 +79,7 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
       <select
         id="res-time"
         name="time"
+        data-testid="time"
         value={values.time}
         onChange={handleChange}
       >
@@ -102,6 +101,7 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
       <input
         type="number"
         id="number of guests"
+        data-testid="numberOfGuests"
         min="1"
         name="numberOfGuests"
         value={values.numberOfGuests}
@@ -118,6 +118,7 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
       <select
         id="occasion"
         name="occasion"
+        data-testid="occasion"
         value={values.occasion}
         onChange={handleChange}
       >
@@ -130,6 +131,7 @@ function ReservationForm({ availableTimes, updateAvailableTimes }) {
       <textarea
         id="comment"
         name="comment"
+        data-testid="comment"
         value={values.comment}
         onChange={handleChange}
       ></textarea>
